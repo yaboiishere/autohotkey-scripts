@@ -4,5 +4,6 @@ F2::
   }
   Return
 
-F1::Pause
-^r::Reload
+F1:: Pause
+
+^r:: Reload
