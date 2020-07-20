@@ -10,7 +10,7 @@ GroupAdd, Discord, ahk_exe Discord.exe
 GroupAdd, VSCode, ahk_exe Code.exe
 GroupAdd, Email, ahk_exe MailClient.exe
 
-open_or_switch_to(exe_name, application_path, group_name)
+OpenOrSwitchTo(exe_name, application_path, group_name)
 {
   IfWinExist, ahk_exe %exe_name%
     GroupActivate, %group_name%, R
@@ -39,20 +39,20 @@ EmailStart := "C:\Program Files (x86)\eM Client\MailClient.exe"
 EmailExe := "MailClient.exe"
 EmailGroup := "Email"
 
->!1:: open_or_switch_to(BrowserExe, BrowserStart, BrowserGroup)
->!2:: open_or_switch_to(VSCodeExe, VSCodeStart, VSCodeGroup)
+>!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
+>!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
 >!3:: GroupActivate, Terminal, R
->!4:: open_or_switch_to(SlackExe, SlackStart, SlackGroup)
->!5:: open_or_switch_to(DiscordExe, DiscordStart, DiscordGroup)
->!6:: open_or_switch_to(EmailExe, EmailStart, EmailGroup)
+>!4:: OpenOrSwitchTo(SlackExe, SlackStart, SlackGroup)
+>!5:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
+>!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
 >!h:: Send, {^}{Space}
 >!F12:: Reload
 
-^!1:: open_or_switch_to(BrowserExe, BrowserStart, BrowserGroup)
-^!2:: open_or_switch_to(VSCodeExe, VSCodeStart, VSCodeGroup)
+^!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
+^!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
 ^!3:: GroupActivate, Terminal, R
-^!4:: open_or_switch_to(SlackExe, SlackStart, SlackGroup)
-^!5:: open_or_switch_to(DiscordExe, DiscordStart, DiscordGroup)
-^!6:: open_or_switch_to(EmailExe, EmailStart, EmailGroup)
+^!4:: OpenOrSwitchTo(SlackExe, SlackStart, SlackGroup)
+^!5:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
+^!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
 ^!h:: Send, {^}{Space}
 ^!F12:: Reload
