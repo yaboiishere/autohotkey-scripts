@@ -1,4 +1,4 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -29,9 +29,19 @@ GroupAdd, VSCode, ahk_exe Code.exe
 
 ^!3:: GroupActivate, Terminal, R
 
-^!4:: GroupActivate, Slack, R
+^!4::
+  IfWinExist, ahk_exe "Slack.exe"
+    GroupActivate, Slack, R
+  else
+    Run, "C:\Users\ricka\AppData\Local\slack\slack.exe"
+  Return
 
-^!5:: GroupActivate, Discord, R
+^!5::
+  IfWinExist, ahk_exe "Discord.exe"
+    GroupActivate, Discord, R
+  else
+    Run, "C:\Users\ricka\AppData\Local\Discord\Update.exe" --processStart Discord.exe
+  Return
 
 ^!h:: Send, {^}{Space}
 
