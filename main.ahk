@@ -27,6 +27,10 @@ VSCodeExe := "Code.exe"
 VSCodeStart := "C:\Users\ricka\AppData\Local\Programs\Microsoft VS Code\Code.exe --new-window"
 VSCodeGroup := "VSCode"
 
+TerminalExe := "WindowsTerminal.exe"
+TerminalStart := "wt.exe"
+TerminalGroup := "Terminal"
+
 SlackStart := "C:\Users\ricka\AppData\Local\slack\slack.exe"
 SlackExe := "Slack.exe"
 SlackGroup := "Slack"
@@ -41,7 +45,7 @@ EmailGroup := "Email"
 
 >!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
 >!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
->!3:: GroupActivate, Terminal, R
+>!3:: OpenOrSwitchTo(TerminalExe, TerminalStart, TerminalGroup)
 >!4:: OpenOrSwitchTo(SlackExe, SlackStart, SlackGroup)
 >!5:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
 >!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
@@ -50,7 +54,7 @@ EmailGroup := "Email"
 
 ^!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
 ^!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
-^!3:: GroupActivate, Terminal, R
+^!3:: OpenOrSwitchTo(TerminalExe, TerminalStart, TerminalGroup)
 ^!4:: OpenOrSwitchTo(SlackExe, SlackStart, SlackGroup)
 ^!5:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
 ^!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
