@@ -1,4 +1,4 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -42,6 +42,13 @@ DiscordGroup := "Discord"
 EmailStart := "C:\Program Files (x86)\eM Client\MailClient.exe"
 EmailExe := "MailClient.exe"
 EmailGroup := "Email"
+
+GroupAdd, %BrowserGroup%, ahk_exe %BrowserExe%
+GroupAdd, %TerminalGroup%, ahk_exe %TerminalExe%
+GroupAdd, %SlackGroup%, ahk_exe %SlackExe%
+GroupAdd, %DiscordGroup%, ahk_exe %DiscordExe%
+GroupAdd, %VSCodeGroup%, ahk_exe %VSCodeExe%
+GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 
 >!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
 >!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
