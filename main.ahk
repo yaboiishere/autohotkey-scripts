@@ -1,14 +1,7 @@
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
-GroupAdd, Browser, ahk_exe msedge.exe
-GroupAdd, Terminal, ahk_exe WindowsTerminal.exe
-GroupAdd, Slack, ahk_exe Slack.exe
-GroupAdd, Discord, ahk_exe Discord.exe
-GroupAdd, VSCode, ahk_exe Code.exe
-GroupAdd, Email, ahk_exe MailClient.exe
 
 OpenOrSwitchTo(exe_name, application_path, group_name)
 {
@@ -39,8 +32,8 @@ DiscordStart := "C:\Users\ricka\AppData\Local\Discord\Update.exe --processStart 
 DiscordExe := "Discord.exe"
 DiscordGroup := "Discord"
 
-EmailStart := "C:\Program Files (x86)\eM Client\MailClient.exe"
-EmailExe := "MailClient.exe"
+EmailStart := "C:\Program Files (x86)\Mozilla Thunderbird\thunderbird.exe"
+EmailExe := "thunderbird.exe"
 EmailGroup := "Email"
 
 GroupAdd, %BrowserGroup%, ahk_exe %BrowserExe%
