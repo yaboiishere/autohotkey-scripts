@@ -32,7 +32,7 @@ DiscordStart := "C:\Users\ricka\AppData\Local\Discord\Update.exe --processStart 
 DiscordExe := "Discord.exe"
 DiscordGroup := "Discord"
 
-EmailStart := "C:\Program Files (x86)\Mozilla Thunderbird\thunderbird.exe"
+EmailStart := "C:\Program Files\Mozilla Thunderbird\thunderbird.exe"
 EmailExe := "thunderbird.exe"
 EmailGroup := "Email"
 
