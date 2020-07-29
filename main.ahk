@@ -12,6 +12,16 @@ OpenOrSwitchTo(exe_name, application_path, group_name)
   Return
 }
 
+InsertCurrentTime()
+{
+  PreviouslyOnClipboard := Clipboard
+  FormatTime, Time, A_Now, ddd dd-MM-yyyy HH:mm
+  Clipboard := Time
+  Send ^v
+  Clipboard := PreviouslyOnClipboard
+  Return
+}
+
 BrowserExe := "msedge.exe"
 BrowserStart := "C:\Program Files (x86)\Microsoft\Edge Beta\Application\msedge.exe --profile-directory=Default"
 BrowserGroup := "Browser"
@@ -50,6 +60,7 @@ GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 >!5:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
 >!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
 >!h:: Send, {^}{Space}
+>!t:: InsertCurrentTime()
 >!F12:: Reload
 
 ^!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
@@ -59,4 +70,5 @@ GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 ^!5:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
 ^!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
 ^!h:: Send, {^}{Space}
+^!t:: InsertCurrentTime()
 ^!F12:: Reload
