@@ -72,3 +72,6 @@ GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 ^!h:: Send, {^}{Space}
 ^!t:: InsertCurrentTime()
 ^!F12:: Reload
+
+^!CapsLock:: Send, {CapsLock}
+CapsLock:: Send, {Escape}
