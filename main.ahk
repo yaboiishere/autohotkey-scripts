@@ -46,9 +46,12 @@ EmailStart := "C:\Program Files\Mozilla Thunderbird\thunderbird.exe"
 EmailExe := "thunderbird.exe"
 EmailGroup := "Email"
 
+SignalGroup := "Communications"
 SignalStart := "C:\Users\ricka\AppData\Local\Programs\signal-desktop\Signal.exe"
 SignalExe := "Signal.exe"
-SignalGroup := "Signal"
+ViberStart := "C:\Users\ricka\AppData\Local\Viber\Viber.exe"
+ViberExe := "Viber.exe"
+ViberGroup := "Communications"
 
 GroupAdd, %BrowserGroup%, ahk_exe %BrowserExe%
 GroupAdd, %TerminalGroup%, ahk_exe %TerminalExe%
@@ -57,6 +60,7 @@ GroupAdd, %DiscordGroup%, ahk_exe %DiscordExe%
 GroupAdd, %VSCodeGroup%, ahk_exe %VSCodeExe%
 GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 GroupAdd, %SignalGroup%, ahk_exe %SignalExe%
+GroupAdd, %ViberGroup%, ahk_exe %ViberExe%
 
 >!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
 >!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
