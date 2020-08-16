@@ -70,6 +70,12 @@ EmailGroup := "Email"
 
 global F1Processes := []
 global F1Index := 1
+global F2Processes := []
+global F2Index := 1
+global F3Processes := []
+global F3Index := 1
+global F4Processes := []
+global F4Index := 1
 
 GroupAdd, %BrowserGroup%, ahk_exe %BrowserExe%
 GroupAdd, %TerminalGroup%, ahk_exe %TerminalExe%
