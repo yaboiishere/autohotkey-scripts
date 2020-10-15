@@ -2,6 +2,7 @@
 #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#IncludeAgain Clip.ahk
 
 OpenOrSwitchTo(exe_name, application_path, group_name)
 {
@@ -14,11 +15,8 @@ OpenOrSwitchTo(exe_name, application_path, group_name)
 
 InsertCurrentTime()
 {
-  PreviouslyOnClipboard := Clipboard
   FormatTime, Time, A_Now, ddd dd-MM-yyyy HH:mm
-  Clipboard := Time
-  Send ^v
-  Clipboard := PreviouslyOnClipboard
+  Clip(Time)
   Return
 }
 
