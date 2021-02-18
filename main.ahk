@@ -20,6 +20,13 @@ InsertCurrentTime()
   Return
 }
 
+InsertCurrentTimeMachineFormat()
+{
+  FormatTime, Time, % A_NowUTC, yyyy_MM_dd_HHmmss
+  Clip(Time)
+  Return
+}
+
 AddToFGroup(ByRef processes, ByRef index)
 {
   WinGet, active_id, ID, A
@@ -94,6 +101,7 @@ GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 >!4:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
 >!h:: Send, {^}{Space}
 >!t:: InsertCurrentTime()
+>!n:: InsertCurrentTimeMachineFormat()
 >!F12:: Reload
 
 ^!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
@@ -102,6 +110,7 @@ GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 ^!4:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
 ^!h:: Send, {^}{Space}
 ^!t:: InsertCurrentTime()
+^!n:: InsertCurrentTimeMachineFormat()
 ^!F12:: Reload
 
 ; #F1:: AddToFGroup(F1Processes, F1Index)
