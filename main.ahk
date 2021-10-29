@@ -57,8 +57,8 @@ ClearFGroup(ByRef processes, ByRef index)
   Return
 }
 
-BrowserExe := "msedge.exe"
-BrowserStart := "C:\Program Files (x86)\Microsoft\Edge Beta\Application\msedge.exe --profile-directory=Default"
+BrowserExe := "firefox.exe"
+BrowserStart := "C:\Program Files\Mozilla Firefox\firefox.exe"
 BrowserGroup := "Browser"
 
 VSCodeExe := "Code.exe"
