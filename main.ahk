@@ -1,7 +1,7 @@
-﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-#Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+﻿#NoEnv ; Recommended for performance and compatibility with future AutoHotkey releases.
+#Warn ; Enable warnings to assist with detecting common errors.
+SendMode Input ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir% ; Ensures a consistent starting directory.
 #IncludeAgain Clip.ahk
 
 OpenOrSwitchTo(exe_name, application_path, group_name)
@@ -57,17 +57,25 @@ ClearFGroup(ByRef processes, ByRef index)
   Return
 }
 
-BrowserExe := "firefox.exe"
-BrowserStart := "C:\Program Files\Mozilla Firefox\firefox.exe"
+BrowserExe := "chrome.exe"
+BrowserStart := "C:\Program Files\Google\Chrome\Application\chrome.exe"
 BrowserGroup := "Browser"
 
 VSCodeExe := "Code.exe"
-VSCodeStart := "C:\Users\ricka\AppData\Local\Programs\Microsoft VS Code\Code.exe --new-window"
+VSCodeStart := "C:\Users\mixai\AppData\Local\Programs\Microsoft VS Code\Code.exe --new-window"
 VSCodeGroup := "VSCode"
 
 TerminalExe := "WindowsTerminal.exe"
 TerminalStart := "wt.exe"
 TerminalGroup := "Terminal"
+
+DiscordExe := "Discord.lnk"
+DiscordStart := "C:\Users\mixai\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Discord Inc\Discord.lnk"
+DiscordGroup := "Discord"
+
+SpotifyExe := "Spotify.exe"
+SpotifyStart := "C:\Program Files\WindowsApps\SpotifyAB.SpotifyMusic_1.191.824.0_x86__zpdnekdrzrea\Spotify.exe"
+SpotifyGroup := "Spotify"
 
 EmailStart := "C:\Program Files\Mozilla Thunderbird\thunderbird.exe"
 EmailExe := "thunderbird.exe"
@@ -81,10 +89,10 @@ global F3Processes := []
 global F3Index := 1
 global F4Processes := []
 global F4Index := 1
-; global F5Processes := []
-; global F5Index := 1
-; global F6Processes := []
-; global F6Index := 1
+global F5Processes := []
+global F5Index := 1
+global F6Processes := []
+global F6Index := 1
 ; global F7Processes := []
 ; global F7Index := 1
 ; global F8Processes := []
@@ -93,25 +101,20 @@ global F4Index := 1
 GroupAdd, %BrowserGroup%, ahk_exe %BrowserExe%
 GroupAdd, %TerminalGroup%, ahk_exe %TerminalExe%
 GroupAdd, %VSCodeGroup%, ahk_exe %VSCodeExe%
+GroupAdd, %DiscordGroup%, ahk_exe %DiscordExe%
+GroupAdd, %SpotifyGroup%, ahk_exe %SpotifyExe%
 GroupAdd, %EmailGroup%, ahk_exe %EmailExe%
 
->!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
->!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
->!3:: OpenOrSwitchTo(TerminalExe, TerminalStart, TerminalGroup)
->!4:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
->!h:: Send, {^}{Space}
->!t:: InsertCurrentTime()
->!n:: InsertCurrentTimeMachineFormat()
->!F12:: Reload
-
-^!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
-^!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
-^!3:: OpenOrSwitchTo(TerminalExe, TerminalStart, TerminalGroup)
-^!4:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
-^!h:: Send, {^}{Space}
-^!t:: InsertCurrentTime()
-^!n:: InsertCurrentTimeMachineFormat()
-^!F12:: Reload
+!1:: OpenOrSwitchTo(BrowserExe, BrowserStart, BrowserGroup)
+!2:: OpenOrSwitchTo(VSCodeExe, VSCodeStart, VSCodeGroup)
+!3:: OpenOrSwitchTo(TerminalExe, TerminalStart, TerminalGroup)
+!4:: OpenOrSwitchTo(DiscordExe, DiscordStart, DiscordGroup)
+!5:: OpenOrSwitchTo(SpotifyExe, SpotifyStart, SpotifyGroup)
+!6:: OpenOrSwitchTo(EmailExe, EmailStart, EmailGroup)
+!h:: Send, {^}{Space}
+!t:: InsertCurrentTime()
+!n:: InsertCurrentTimeMachineFormat()
+!F12:: Reload
 
 ; #F1:: AddToFGroup(F1Processes, F1Index)
 ; #F2:: AddToFGroup(F2Processes, F2Index)
